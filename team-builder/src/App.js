@@ -13,7 +13,7 @@ function App() {
     {
       name: "Mikhail Twarogowski",
       email: "mikhailtwar@gmail.com",
-      role: "former roommate, current chicken dad"
+      role: "sometime sauceboy, current chicken dad"
     },
     {
       name: "Jeff Garland",
@@ -62,10 +62,16 @@ function App() {
     }
   ]);
 
+  const [member, setMember] = useState();
+
+  function memberToEdit() {
+    console.log("edit button clicked");
+  }
+
   return (
     <div>
-      <Team team={team} />
-      <Form team={team} setTeam={setTeam} />
+      <Team team={team} memberToEdit={memberToEdit} />
+      <Form team={team} setTeam={setTeam} memberToEdit={memberToEdit} />
     </div>
   );
 }

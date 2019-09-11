@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const Form = props => {
   const [newTeamMember, setNewTeamMember] = useState({
@@ -19,9 +19,13 @@ const Form = props => {
     props.setTeam([newTeamMember, ...props.team]);
   };
 
+  useEffect(() => {
+    console.log(props);
+  }, [props.memberToEdit]);
+
   return (
     <form onSubmit={handleSubmit}>
-      <label for="formName">Name:</label>
+      <label htmlFor="formName">Name:</label>
       <input
         value={newTeamMember.name}
         id="formName"
@@ -31,7 +35,7 @@ const Form = props => {
         onChange={handleChange}
       />
 
-      <label for="formRole">Role:</label>
+      <label htmlFor="formRole">Role:</label>
       <input
         value={newTeamMember.role}
         id="formRole"
@@ -41,7 +45,7 @@ const Form = props => {
         onChange={handleChange}
       />
 
-      <label for="formEmail">Email:</label>
+      <label htmlFor="formEmail">Email:</label>
       <input
         value={newTeamMember.email}
         id="formEmail"
