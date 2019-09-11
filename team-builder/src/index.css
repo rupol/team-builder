@@ -140,7 +140,15 @@ table {
 }
 
 html {
-  font-size: 62.5%;
+  font-size: 100%;
 }
 
 /* ///// STYLING ///// */
+form {
+  width  : 90%;
+  margin : 20px auto;
+  padding: 10px 5%;
+  ;
+  border       : 1px solid #ced4da;
+  border-radius: 0.25rem;
+}

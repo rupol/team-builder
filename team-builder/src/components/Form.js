@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
+import { Button, Form, FormGroup, Label, Input, FormText } from "reactstrap";
 
-const Form = props => {
+const TeamForm = props => {
   const [newTeamMember, setNewTeamMember] = useState({
     name: "",
     title: "",
@@ -24,39 +25,52 @@ const Form = props => {
   }, [props.memberToEdit]);
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label htmlFor="formName">Name:</label>
-      <input
-        value={newTeamMember.name}
-        id="formName"
-        placeholder="Name"
-        name="name"
-        type="text"
-        onChange={handleChange}
-      />
+    <Form onSubmit={handleSubmit}>
+      <FormGroup>
+        <Label htmlFor="formName" hidden>
+          Name:
+        </Label>
+        <Input
+          value={newTeamMember.name}
+          id="formName"
+          placeholder="Name"
+          name="name"
+          type="text"
+          onChange={handleChange}
+        />
+      </FormGroup>
 
-      <label htmlFor="formRole">Role:</label>
-      <input
-        value={newTeamMember.role}
-        id="formRole"
-        placeholder="Role"
-        name="role"
-        type="text"
-        onChange={handleChange}
-      />
+      <FormGroup>
+        <Label htmlFor="formRole" hidden>
+          Role:
+        </Label>
+        <Input
+          value={newTeamMember.role}
+          id="formRole"
+          placeholder="Role"
+          name="role"
+          type="text"
+          onChange={handleChange}
+        />
+      </FormGroup>
 
-      <label htmlFor="formEmail">Email:</label>
-      <input
-        value={newTeamMember.email}
-        id="formEmail"
-        placeholder="Email"
-        name="email"
-        type="email"
-        onChange={handleChange}
-      />
-      <button type="submit">Submit</button>
-    </form>
+      <FormGroup>
+        <Label htmlFor="formEmail" hidden>
+          Email:
+        </Label>
+        <Input
+          value={newTeamMember.email}
+          id="formEmail"
+          placeholder="Email"
+          name="email"
+          type="email"
+          onChange={handleChange}
+        />
+      </FormGroup>
+
+      <Button type="submit">Submit</Button>
+    </Form>
   );
 };
 
-export default Form;
+export default TeamForm;

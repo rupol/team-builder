@@ -1,7 +1,18 @@
 import React, { useState } from "react";
 import "./App.css";
+import styled from "styled-components";
 import Team from "./components/Team";
-import Form from "./components/Form";
+import TeamForm from "./components/Form";
+
+const Container = styled.div`
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+`;
+
+const Title = styled.h1`
+  font-size: 5rem;
+`;
 
 function App() {
   const [team, setTeam] = useState([
@@ -69,10 +80,11 @@ function App() {
   }
 
   return (
-    <div>
+    <Container>
+      <Title>Pizza Night Crew</Title>
+      <TeamForm team={team} setTeam={setTeam} memberToEdit={memberToEdit} />
       <Team team={team} memberToEdit={memberToEdit} />
-      <Form team={team} setTeam={setTeam} memberToEdit={memberToEdit} />
-    </div>
+    </Container>
   );
 }
 
